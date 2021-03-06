@@ -1,0 +1,14 @@
+{
+  "name": "bokeh-poc",
+  "version": "1.0.0",
+  "main": "index.html",
+  "author": "Alexis",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "serve -l 3000"
+  },
+  "devDependencies": {
+    "serve": "^11.3.2"
+  }
+}

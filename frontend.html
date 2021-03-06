@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bokeh POC</title>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.3.0.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.0.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <section class="bokeh-poc">
+      <div id="plot" class="bk-root"></div>
+    </section>
+
+    <script>
+      var app = new Vue({
+        data: {},
+        computed: {},
+        methods: {
+          fetchPlot: async function() {
+            const response = await fetch("http://localhost:5000")
+            const item = await response.json()
+            Bokeh.embed.embed_item(item, "plot")
+          }
+        },
+        created() {
+          this.fetchPlot()
+        }
+      })
+
+      app.$mount(".bokeh-poc")
+    </script>
+  </body>
+</html>
