@@ -7,6 +7,8 @@ name = "pypi"
 flask = "*"
 flask-cors = "*"
 bokeh = "*"
+tornado = "*"
+pandas = "*"
 
 [dev-packages]
 

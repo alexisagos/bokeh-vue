@@ -1,25 +1,21 @@
 1. Install dependencies
 ```bash
+# backend
 $ pipenv install
+# frontend
 $ yarn install
 ```
 
-2. Export FLASK_APP variable
+2. Serve backend
 
 ```bash
-$ export FLASK_APP=backend.py
+$ pipenv run python backend.py
 ```
 
-3. Serve backend
-
-```bash
-$ pipenv run flask run
-```
-
-4. Serve frontend
+3. Serve frontend
 
 ```bash
 $ yarn start
 ```
 
-5. Go to http://localhost:3000/frontend
+4. Go to http://localhost:3000/frontend

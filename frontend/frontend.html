@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bokeh POC</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div ref="bokeh"></div>
+    </div>
+
+    <script>
+      var app = new Vue({
+        data: {},
+        computed: {},
+        methods: {
+          async fetchScriptText() {
+            const response = await fetch("http://localhost:8000")
+            return response.text()
+          },
+          async injectBokeh() {
+            const scriptText = await this.fetchScriptText()
+            const _script = new DOMParser().parseFromString(scriptText, 'text/html').scripts[0]
+            const script = document.createElement("script")
+            script.id = _script.id
+            script.innerHTML = _script.innerHTML
+            this.$refs.bokeh.appendChild(script)
+          }
+        },
+        mounted() {
+          this.injectBokeh()
+        }
+      })
+
+      app.$mount("#app")
+    </script>
+  </body>
+</html>
