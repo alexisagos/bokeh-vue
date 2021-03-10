@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "serve -l 3000"
+    "start": "serve -l 3000 -s"
   },
   "devDependencies": {
     "serve": "^11.3.2"

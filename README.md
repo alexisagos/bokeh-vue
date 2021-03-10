@@ -18,4 +18,4 @@ $ pipenv run python backend.py
 $ yarn start
 ```
 
-4. Go to http://localhost:3000/frontend
+4. Go to http://localhost:3000
